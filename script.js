@@ -9,7 +9,8 @@ let candle = document.getElementById("candle");
 let cakeMsg = document.getElementById("cakeMsg");
 let wishMsg = document.getElementById("wishMsg");
 let replyMsg = document.getElementById("replyMsg");
-
+let service = "service_2lpoq8t";
+let template = "template_63k32rp";
 function showScreen(screen) {
     home.classList.remove("active");
     letter.classList.remove("active");
@@ -58,7 +59,7 @@ window.submitWish = function() {
         return;
     }
 
-    emailjs.send("service_62zg4op", "template_emqjqzu", {
+    emailjs.send(service, template, {
         message: wish
     })
     .then(() => {
