@@ -10,7 +10,8 @@ let cakeMsg = document.getElementById("cakeMsg");
 let wishMsg = document.getElementById("wishMsg");
 let replyMsg = document.getElementById("replyMsg");
 let service = "service_2lpoq8t";
-let template = "template_63k32rp";
+let template_reply = "template_63k32rp";
+let template_wish = "template_qgtognj";
 function showScreen(screen) {
     home.classList.remove("active");
     letter.classList.remove("active");
@@ -48,7 +49,7 @@ candle.addEventListener("click", () => {
 });
 
 /* INIT EMAILJS */
-emailjs.init("2dmm3nTMZnIUaAyMa");
+emailjs.init("m9Qme6X2dXVBYjulw");
 
 /* SEND WISH */
 window.submitWish = function() {
@@ -59,7 +60,7 @@ window.submitWish = function() {
         return;
     }
 
-    emailjs.send(service, template, {
+    emailjs.send(service, template_wish, {
         message: wish
     })
     .then(() => {
@@ -81,7 +82,7 @@ window.submitReply = function() {
         return;
     }
 
-    emailjs.send("service_62zg4op", "template_f8qpsf9", {
+    emailjs.send(service, template_reply, {
         name: name,
         message: reply
     })
